@@ -22,7 +22,8 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   componentDidMount () {
-    fetch('http://sheltered-dawn-78797.herokuapp.com/?page=13')
+    const hostname = 'http://sheltered-dawn-78797.herokuapp.com'
+    fetch(`${hostname}/?page=13`)
       .then(response => {
         console.log(`Got these Link headers: "${response.headers.get('link')}"`)
       })
