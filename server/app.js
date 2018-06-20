@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const port = process.env.port || 5000
 
 app.get('/', (req, res) => {
   const { page = 1 } = req.query
@@ -11,4 +12,4 @@ app.get('/', (req, res) => {
   res.send(`Here's page ${page}!`)
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
